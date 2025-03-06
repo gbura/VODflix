@@ -23,8 +23,23 @@ export interface Movie {
 	media_type?: string
 }
 
+export interface MovieDetails extends Movie {
+	genres: Genre[]
+	runtime: number
+	status: string
+	tagline: string
+	spoken_languages: {
+		name: string
+	}[]
+}
+
 export type Genre = {
 	id: number
 	name: string
-	color: string
+	color?: string
+}
+
+export type MovieRowProps = {
+	data: Movie[]
+	title: string
 }
