@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google'
 import './globals.css'
 import Header from '../components/Header/Header'
 import LoadingScreen from '@/components/LoadingScreen/LoadingScreen'
+import { NavigationProvider } from '../providers/NavigationProvider'
 
 const roboto = Roboto({
 	variable: '--font-roboto',
@@ -22,9 +23,11 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${roboto.className} antialiased min-h-screen`}>
-				<LoadingScreen />
-				<Header title='VODflix' />
-				<main className='bg-[#111]'>{children}</main>
+				<NavigationProvider>
+					<LoadingScreen />
+					<Header title='VODflix' />
+					<main className='bg-[#111]'>{children}</main>
+				</NavigationProvider>
 			</body>
 		</html>
 	)
