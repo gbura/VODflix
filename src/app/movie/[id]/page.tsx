@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import SimiliarMoviesCarousel from '@/components/SimiliarMoviesCarousel/SimiliarMoviesCarousel'
 
 export default async function Page({ params }: { params: { id: string } }) {
-	const { id: movieId } = await params
+	const { id: movieId } = params
 	const movieDetails: MovieDetails = await getMovieDetails(movieId)
 	const similiarMovies: APIResponse = await getSimiliarMovies(movieId)
 
