@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Badge } from '@/components/ui/badge'
 import { MoveRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Banner({ banners }: { banners: APIResponse }) {
 	return (
@@ -24,15 +25,21 @@ export default function Banner({ banners }: { banners: APIResponse }) {
 				{banners.results.length &&
 					banners.results.map((banner: Movie) => (
 						<CarouselItem key={banner.id} className='pt-1 w-full'>
-							<div
-								className='relative h-full w-full bg-cover bg-center bg-no-repeat'
-								style={{
-									backgroundImage: `url(https://image.tmdb.org/t/p/original${banner.backdrop_path})`,
-								}}>
+							<div className='relative h-full w-full'>
+								<Image
+									src={`https://image.tmdb.org/t/p/original${banner.backdrop_path}`}
+									alt={banner.original_title}
+									fill
+									priority
+									quality={100}
+									className='absolute top-0 left-0 object-cover md:object-fill'
+									placeholder='blur'
+									blurDataURL={`https://image.tmdb.org/t/p/w300${banner.backdrop_path}`}
+								/>
 								<div className='absolute inset-0 bg-black opacity-50' />
 								<div className='absolute inset-0 bg-gradient-to-t from-black to-transparent' />
 								<div className='flex flex-col ml-4 md:ml-8 pt-40 text-white'>
-									<h1 className='text-5xl md:text-7xl lg:text-8xl text-white font-bold z-10'>
+									<h1 className='text-5xl md:text-6xl lg:text-7xl text-white font-bold z-10'>
 										{banner.original_title}
 									</h1>
 									<div className='mt-2 md:mt-4 inline-flex items-center gap-x-2 z-10 text-white'>
@@ -58,7 +65,7 @@ export default function Banner({ banners }: { banners: APIResponse }) {
 									<p className='mt-4 md:mt-8 text-base md:text-lg max-w-96 md:max-w-4xl z-10'>{banner.overview}</p>
 									<Link
 										href={`/movie/${banner.id}`}
-										className='flex items-center gap-1 z-10 text-gray-300 mt-4 md:mt-8'>
+										className='flex items-center gap-1 z-10 text-gray-300 mt-4 md:mt-8 max-w-max'>
 										<p className='text-sm'>Check details</p>
 										<MoveRight size={14} />
 									</Link>
