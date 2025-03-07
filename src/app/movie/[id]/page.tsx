@@ -5,12 +5,13 @@ import Link from 'next/link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import SimiliarMoviesCarousel from '@/components/SimiliarMoviesCarousel/SimiliarMoviesCarousel'
 
-export default async function Page({ params }: { params: { id: string } }) {
-	const { id: movieId } = params
-	const movieDetails: MovieDetails = await getMovieDetails(movieId)
-	const similiarMovies: APIResponse = await getSimiliarMovies(movieId)
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+    const params = await props.params;
+    const { id: movieId } = params
+    const movieDetails: MovieDetails = await getMovieDetails(movieId)
+    const similiarMovies: APIResponse = await getSimiliarMovies(movieId)
 
-	return (
+    return (
 		<div
 			className='relative w-full min-h-screen bg-center bg-cover'
 			style={{
