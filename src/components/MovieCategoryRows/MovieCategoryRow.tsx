@@ -28,6 +28,8 @@ export default function MovieCategoryRow({ data, title }: MovieRowProps) {
 											quality={100}
 											alt={movie.title}
 											src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+											placeholder='blur'
+											blurDataURL={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 										/>
 									</div>
 								</Link>

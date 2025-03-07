@@ -3,7 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Link from 'next/link'
 import Image from 'next/image'
 
-export default function SimiliarMoviesCarousel({ data }: { data: Movie[] }) {
+export default function SimilarMoviesCarousel({ data }: { data: Movie[] }) {
 	return (
 		<section className='h-full flex flex-col md:flex-row px-6 md:px-12 gap-12'>
 			<Carousel
@@ -26,6 +26,8 @@ export default function SimiliarMoviesCarousel({ data }: { data: Movie[] }) {
 												quality={100}
 												alt={movie.title}
 												src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+												placeholder='blur'
+												blurDataURL={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 											/>
 										</div>
 									</Link>

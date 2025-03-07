@@ -17,6 +17,8 @@ export default function MovieCard({ movie }: { movie: Movie }) {
 							height={500}
 							className='h-full w-full object-contain'
 							priority
+							placeholder='blur'
+							blurDataURL={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
 						/>
 
 						<div className='absolute inset-0 bg-gradient-to-t from-[#222020] to-transparent' />
