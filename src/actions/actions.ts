@@ -64,3 +64,12 @@ export async function getSimiliarMovies(movieId: string): Promise<APIResponse> {
 
 	return data
 }
+
+export async function getMoviesByGenre(id: string, page: number = 1): Promise<APIResponse> {
+	const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${id}&language=en-US&page=${page}`)
+	const data: APIResponse = await res.json()
+	if (!res.ok) {
+		throw new Error('Failed to fetch movies.')
+	}
+	return data
+}
