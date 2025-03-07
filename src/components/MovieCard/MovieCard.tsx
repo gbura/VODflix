@@ -16,6 +16,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
 							width={500}
 							height={500}
 							className='h-full w-full object-contain'
+							priority
 						/>
 
 						<div className='absolute inset-0 bg-gradient-to-t from-[#222020] to-transparent' />

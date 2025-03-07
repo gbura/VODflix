@@ -71,7 +71,7 @@ export default function Page() {
 					<Input
 						placeholder='Search for movies...'
 						className='pl-8 text-white'
-						onChange={(e: any) => handleSearchChange(e.target.value)}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchChange(e.target.value)}
 					/>
 				</div>
 			</div>

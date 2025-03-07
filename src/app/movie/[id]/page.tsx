@@ -1,5 +1,5 @@
 import { getMovieDetails, getSimiliarMovies } from '@/actions/actions'
-import { APIResponse, Genre, Movie, MovieDetails } from '@/types/APIResponse'
+import { APIResponse, Genre, MovieDetails } from '@/types/APIResponse'
 import { CalendarRange, Clock, MoveLeft, MoveRight, Speaker, Star } from 'lucide-react'
 import Link from 'next/link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
