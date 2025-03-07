@@ -24,6 +24,8 @@ export default function Page() {
 	const debouncedSearchVal = useDebounce(searchVal, 500)
 
 	useEffect(() => {
+		window.scrollTo(0, 0)
+
 		const fetchMovies = async () => {
 			setLoading(true)
 			try {
