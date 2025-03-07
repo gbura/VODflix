@@ -4,6 +4,8 @@ import { genres } from '@/constants'
 import Autoplay from 'embla-carousel-autoplay'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Badge } from '@/components/ui/badge'
+import { MoveRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Banner({ banners }: { banners: APIResponse }) {
 	return (
@@ -13,13 +15,13 @@ export default function Banner({ banners }: { banners: APIResponse }) {
 			}}
 			plugins={[
 				Autoplay({
-					delay: 2000,
+					delay: 3000,
 				}),
 			]}
 			orientation='horizontal'
 			className='w-full'>
 			<CarouselContent className='-mt-1 h-[640px]'>
-				{banners.results.length ? (
+				{banners.results.length &&
 					banners.results.map((banner: Movie) => (
 						<CarouselItem key={banner.id} className='pt-1 w-full'>
 							<div
@@ -39,27 +41,31 @@ export default function Banner({ banners }: { banners: APIResponse }) {
 										<p>{banner.original_language.toUpperCase()}</p>
 										<span className='text-red-500'>•</span>
 										<div className='flex items-center gap-1 md:gap-2 flex-wrap'>
-											{banner.genre_ids.length
-												? banner.genre_ids.map((genreId: number, index: number) => {
-														const genre = genres.find((g: Genre) => g.id === genreId)
-														return genre ? (
+											{banner.genre_ids.length &&
+												banner.genre_ids.map((genreId: number, index: number) => {
+													const genre = genres.find((g: Genre) => g.id === genreId)
+													return (
+														genre && (
 															<Badge key={index} variant='outline' className='text-white'>
 																{genre.name}
 															</Badge>
-														) : null
-												  })
-												: null}
+														)
+													)
+												})}
 										</div>
 									</div>
 
 									<p className='mt-4 md:mt-8 text-base md:text-lg max-w-96 md:max-w-4xl z-10'>{banner.overview}</p>
+									<Link
+										href={`/movie/${banner.id}`}
+										className='flex items-center gap-1 z-10 text-gray-300 mt-4 md:mt-8'>
+										<p className='text-sm'>Check details</p>
+										<MoveRight size={14} />
+									</Link>
 								</div>
 							</div>
 						</CarouselItem>
-					))
-				) : (
-					<div>LOADING...</div>
-				)}
+					))}
 			</CarouselContent>
 		</Carousel>
 	)

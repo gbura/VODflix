@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className='flex flex-col gap-y-4 text-white'>
-					<h1 className='text-5xl md:text-8xl xl:text-9xl'>{movieDetails.title}</h1>
+					<h1 className='text-5xl md:text-6xl xl:text-7xl'>{movieDetails.title}</h1>
 
 					<div className='flex gap-x-5 items-center max-w-max flex-col justify-center'>
 						<div className='border-t border-red-500 w-full h-2 py-2' />
@@ -68,9 +68,9 @@ export default async function Page({ params }: { params: { id: string } }) {
 						</div>
 					</div>
 					<div className='flex items-center'>
-						{movieDetails.genres.length ? (
+						{movieDetails.genres.length && (
 							<span>{movieDetails.genres.map((genre: Genre) => genre.name).join(' • ')}</span>
-						) : null}
+						)}
 					</div>
 
 					<p className='mt-4 md:mt-6 text-base md:text-lg max-w-96 md:max-w-4xl z-10'>{movieDetails.overview}</p>
