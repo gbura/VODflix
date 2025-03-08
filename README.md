@@ -1,5 +1,3 @@
-![VODflix](https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80)
-
 # VODflix 🎬
 
 [LINK TO APP](https://vodflix.vercel.app/)
