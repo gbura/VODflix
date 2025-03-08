@@ -1,4 +1,4 @@
-import Banner from '@/components/Banner/Banner'
+import MainBanner from '@/components/MainBanner/MainBanner'
 import MovieCategoryRows from '@/components/MovieCategoryRows/MovieCategoryRows'
 import { getNowPlayingMovies, getPopularMovies, getTopRatedMovies, getUpcomingMovies } from '@/actions/actions'
 import { APIResponse } from '@/types/APIResponse'
@@ -11,7 +11,7 @@ export default async function Page() {
 
 	return (
 		<>
-			<Banner banners={banners} />
+			<MainBanner banners={banners} />
 
 			<MovieCategoryRows
 				popularMovies={popularMovies.results}
