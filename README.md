@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![VODflix](https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80)
 
-## Getting Started
+# VODflix 🎬
 
-First, run the development server:
+[LINK TO APP](https://vodflix.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+VODflix is a Netflix clone created as part of a recruitment task. The application fetches data from the public TheMovieDB API and displays movie lists categorized into different sections. Clicking on a movie redirects the user to a detailed page with more information.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📽️ Fetching movie data from TheMovieDB API
+- 📚 Categorized movie sections for better organization
+- 🎞️ Movie detail page with additional information
+- 📱💻 Fully responsive and adapted to all devices
+- 🔄⚠️ Loading states and error handling support
+- ✨ Subtle animations for a better browsing experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Technologies Used
 
-## Learn More
+This project was built using:
 
-To learn more about Next.js, take a look at the following resources:
+- **Next15** ⚛️
+- **TypeScript** 🛡️
+- **TailwindCSS** 🎨
+- **ShadCN** 🏗️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Installation & Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yourusername/VODflix.git
+   cd VODflix
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**  
+   The app should be running at: [http://localhost:3000](http://localhost:3000)
+
+---
+
+🎥 Created with passion for coding! If you like this project, leave a ⭐ on GitHub! 😊
