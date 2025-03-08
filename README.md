@@ -17,7 +17,7 @@ VODflix is a Netflix clone created as part of a recruitment task. The applicatio
 
 This project was built using:
 
-- **Next15** ⚛️
+- **Next15** <img src="https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png" height="12" />
 - **TypeScript** 🛡️
 - **TailwindCSS** 🎨
 - **ShadCN** 🏗️
