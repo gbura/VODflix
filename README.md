@@ -37,13 +37,19 @@ This project was built using:
    npm install
    ```
 
-3. **Run the development server**
+3. **Create .env.local file and add your API_KEY**
+
+    ```
+    TMDB_API_KEY='YOUR_API_KEY'
+    ```
+
+4. **Run the development server**
 
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**  
+5. **Open in browser**  
    The app should be running at: [http://localhost:3000](http://localhost:3000)
 
 ---
