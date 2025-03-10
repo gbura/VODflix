@@ -27,7 +27,7 @@ This project was built using:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/VODflix.git
+   git clone https://github.com/gbura/VODflix.git
    cd VODflix
    ```
 
